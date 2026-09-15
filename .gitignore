@@ -11,3 +11,6 @@ Thumbs.db
 README.md
 CHANGELOG.md
 RELEASE_NOTES.md
+
+# Release builds are attached to Releases, not committed.
+release/
