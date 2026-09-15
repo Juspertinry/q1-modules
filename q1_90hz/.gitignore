@@ -1,0 +1,7 @@
+# Built zips and boot images are attached to Releases, not committed.
+# Boot images are 64MB and derived from headset firmware.
+dist/
+*.zip
+*.img
+
+vsync.txt

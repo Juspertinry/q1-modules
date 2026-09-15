@@ -1,0 +1,13 @@
+# Built zips and images are attached to releases, not committed.
+dist/
+*.zip
+
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+
+# Docs are being rewritten. Delete this block to start tracking them again.
+README.md
+CHANGELOG.md
+RELEASE_NOTES.md

@@ -1,0 +1,10 @@
+# Oculus binaries and their decoded shader sources belong to Meta.
+# gen_payload.py needs the apk locally to regenerate the patch; it never ships.
+work/*.apk
+work/*.so
+work/shader_chunks/
+work/pt_shader_main.glsl
+
+# Built zips are attached to Releases, not committed.
+dist/
+*.zip

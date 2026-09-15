@@ -1,0 +1,7 @@
+# Stock configs pulled off the headset. Meta's, and customize.sh regenerates
+# from the device's own /vendor/etc anyway, so they are reference only.
+baseline/
+
+# Built zips are attached to Releases, not committed.
+dist/
+*.zip

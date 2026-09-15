@@ -1,0 +1,15 @@
+# Built zips are attached to Releases, not committed.
+dist/
+*.zip
+
+# Out-of-tree kernel build leavings. module/seperationanxiety.ko is the
+# prebuilt that ships, and Module.symvers carries the recovered symbol CRCs,
+# so both are tracked deliberately.
+/seperationanxiety.ko
+*.o
+*.mod
+*.mod.c
+*.mod.o
+.*.cmd
+.tmp_versions/
+modules.order

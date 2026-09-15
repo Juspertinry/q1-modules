@@ -1,0 +1,6 @@
+id=seperationanxiety
+name=SeperationAnxiety
+version=v1.0
+versionCode=1
+author=Juspertinry
+description=Synthesises the display TE pulse so a Quest 1 tracks with its panels removed. Kernel module, loaded at post-fs-data. Quest 1 / msm8998 only.

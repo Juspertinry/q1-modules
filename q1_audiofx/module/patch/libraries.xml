@@ -1,0 +1,3 @@
+        <library name="dynamics_processing" path="libdynproc.so"/>
+        <library name="loudness_enhancer" path="libldnhncr.so"/>
+        <library name="reverb" path="libreverbwrapper.so"/>

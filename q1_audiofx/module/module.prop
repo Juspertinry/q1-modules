@@ -1,0 +1,6 @@
+id=q1_audiofx
+name=Quest 1 system audio effects
+version=v1
+versionCode=1
+author=Juspertinry
+description=Registers the stock AOSP audio effects that Meta left unregistered in the Quest's effects config, and moves the primary output onto the deep-buffer usecase so every stream reaches the normal mixer where a system EQ can process it. Raises output latency to roughly 230ms. Quest 1 / msm8998.
