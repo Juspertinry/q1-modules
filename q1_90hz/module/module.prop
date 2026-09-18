@@ -1,6 +1,6 @@
 id=vd90hz
 name=Quest 1 90Hz override
-version=v3-stable
-versionCode=3
+version=v4
+versionCode=4
 author=Juspertinry
-description=True 90Hz on the Quest 1. Patches the composer HAL, VrDriver, the xrspd timings gate and Virtual Desktop in place from the headset's own files. Needs a boot image with the panel retimed, see README. Quest 1 / msm8998 only.
+description=True 90Hz on the Quest 1. Patches the composer HAL, VrDriver, the xrspd timings gate and Virtual Desktop in place from the headset's own files, and resyncs the panel clock at boot so no sleep/wake is needed. Needs the retimed boot image shipped with it. Quest 1 / msm8998 / v50 only.
