@@ -30,7 +30,7 @@ RATE=$RATE_HI.0
 # only reported so a mismatch is legible.
 OS_TESTED=49845030443200410
 HAL_STOCK=1a55f6862ba8fd13560d9663bf2b4b5b
-HAL_DONE=cd3dc0885d6be092881d01bdc0fdc354   # {144,120}, informational only
+HAL_DONE=fba58f4d851b53f4fbdbdb26341ccec3   # this module's own {90,72} result
 APK_STOCK=fe8b9a03a087bf4d5819e7ffc8c26c7f
 XRSP_STOCK=27443232abdee0e4aeb191e576f407c6
 XRSP_DONE=fa19bcf91ad637b18a795589175ae73a
@@ -147,15 +147,15 @@ fi
 # its b.eq into an unconditional b resolves every rate to the first entry.
 if [ "$DO_XRSP" = "1" ]; then
 ui_print "  - xrspd timings gate"
-if [ "$(md5_of "$XRSP_SRC")" != "$XRSP_STOCK" ]; then
-  ui_print "    ! libxrspdhelper.so is an unrecognised build, skipping"
-else
-  mkdir -p $MODPATH/system/lib64
-  XRSP=$MODPATH/system/lib64/libxrspdhelper.so
-  cp "$XRSP_SRC" "$XRSP"
-  patch_at "$XRSP" 1449264 a0000054 05000014 "timings match b.eq -> b"
-  [ "$(md5_of "$XRSP")" = "$XRSP_DONE" ] || abort "  ! patched xrspd helper hash is wrong"
-fi
+# Accept the already-patched file too. On an upgrade the running overlay is
+# what gets read here, and only accepting stock meant this quietly skipped,
+# shipping a module with no xrspd overlay at all and dropping back to 72.
+require_hash "$XRSP_SRC" $XRSP_STOCK $XRSP_DONE "libxrspdhelper.so"   || abort "  ! refusing to patch an unknown xrspd helper"
+mkdir -p $MODPATH/system/lib64
+XRSP=$MODPATH/system/lib64/libxrspdhelper.so
+cp "$XRSP_SRC" "$XRSP"
+patch_at "$XRSP" 1449264 a0000054 05000014 "timings match b.eq -> b"
+[ "$(md5_of "$XRSP")" = "$XRSP_DONE" ] || abort "  ! patched xrspd helper hash is wrong"
 else
 ui_print "  - xrspd timings gate SKIPPED"
 fi
